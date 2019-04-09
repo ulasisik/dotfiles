@@ -10,3 +10,4 @@ export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 
 alias baggins="ssh ulas@144.122.38.75 -p 2275"
 alias pypip="/usr/local/lib/pypy3.6-v7.0.0-osx64/bin/pip3.6"
+alias neogene="ssh ulas@144.122.38.79"
