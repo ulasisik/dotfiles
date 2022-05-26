@@ -17,10 +17,18 @@ Plugin 'VundleVim/Vundle.vim'
 " Vim airline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'freitass/todo.txt-vim'
-Plugin 'tpope/vim-surround'
-Plugin 'preservim/nerdtree'
 
+" todo.txt vim
+Plugin 'freitass/todo.txt-vim'
+
+" to surround stuff with paranthesis, quotations, vs..
+Plugin 'tpope/vim-surround'
+
+" NERDTree 
+Plugin 'preservim/nerdtree'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'PhilRunninger/nerdtree-visual-selection'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -87,9 +95,9 @@ noremap  <Right> <Nop>
 " Bind nohl
 " Removes highlight of your last search
 " ``<C>`` stands for ``CTRL`` and therefore ``<C-n>`` stands for ``CTRL+n``
-noremap <C-n> :nohl<CR>
-vnoremap <C-n> :nohl<CR>
-inoremap <C-n> :
+" noremap <C-n> :nohl<CR>
+" vnoremap <C-n> :nohl<CR>
+" inoremap <C-n> :
 
 " Settings for jedi-vim
 " let g:jedi#usages_command = "<leader>z"
@@ -99,14 +107,14 @@ inoremap <C-n> :
 
 set completeopt=longest,menuone
 function! OmniPopup(action)
-	    if pumvisible()
-		            if a:action == 'j'
-                                return "\<C-N>"
-                    elseif a:action == 'k'
-                                return "\<C-P>"
-                    endif
-        endif
-        return a:action
+	if pumvisible()
+		if a:action == 'j'
+			return "\<C-N>"
+		elseif a:action == 'k'
+			return "\<C-P>"
+		endif
+	endif
+	return a:action
 endfunction
 
 inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
@@ -118,3 +126,37 @@ set encoding=utf-8
 
 " For todo.txt-vim
 let maplocalleader = ","
+
+" For NERDTree
+" map leader to ctrl + a
+nnoremap <C-a> <C-w>
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+ " Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+:set foldmethod=manual
+
+" Go to tab by number
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tablast<cr>
+
+" Go to last active tab
+au TabLeave * let g:lasttab = tabpagenr()
+nnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
+vnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
