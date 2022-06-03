@@ -24,7 +24,7 @@ Plugin 'freitass/todo.txt-vim'
 " to surround stuff with paranthesis, quotations, vs..
 Plugin 'tpope/vim-surround'
 
-" NERDTree 
+" NERDTree
 Plugin 'preservim/nerdtree'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'ryanoasis/vim-devicons'
@@ -66,7 +66,7 @@ map <c-h> <c-w>h
 " wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
 "set t_Co=256
 color wombat256mod
-highlight Normal ctermbg=None  
+highlight Normal ctermbg=None
 
 " Show line numbers
 set number
@@ -117,9 +117,6 @@ function! OmniPopup(action)
 	return a:action
 endfunction
 
-inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
-inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
-
 " For python
 set encoding=utf-8
 
@@ -160,3 +157,9 @@ noremap <leader>0 :tablast<cr>
 au TabLeave * let g:lasttab = tabpagenr()
 nnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
 vnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
+
+" For powerline
+let g:airline_powerline_fonts = 1
+
+" For FZF
+set rtp+=/usr/local/opt/fzf
