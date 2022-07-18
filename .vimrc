@@ -21,7 +21,7 @@ Plugin 'freitass/todo.txt-vim'
 " to surround stuff with paranthesis, quotations, vs..
 Plugin 'tpope/vim-surround'
 
-" NERDTree
+" NERDTree 
 Plugin 'preservim/nerdtree'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'ryanoasis/vim-devicons'
@@ -60,17 +60,17 @@ set backspace=indent,eol,start
 
 " bind Ctrl+<movement> keys to move around the windows, instead of using
 " Ctrl+w + <movement>
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
+" map <c-j> <c-w>j
+" map <c-k> <c-w>k
+" map <c-l> <c-w>l
+" map <c-h> <c-w>h
 
 " Color scheme
 " mkdir -p ~/.vim/colors && cd ~/.vim/colors
 " wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
 "set t_Co=256
 color wombat256mod
-highlight Normal ctermbg=None
+highlight Normal ctermbg=None  
 
 " Show line numbers
 set number
