@@ -11,9 +11,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 
-" Jedi-vim for python
-" Plugin 'davidhalter/jedi-vim'
-
 " Vim airline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -29,6 +26,13 @@ Plugin 'preservim/nerdtree'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'PhilRunninger/nerdtree-visual-selection'
+
+" vim tmux runner
+Plugin 'christoomey/vim-tmux-runner'
+
+" vim tmux navigator
+Plugin 'christoomey/vim-tmux-navigator'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -99,23 +103,12 @@ noremap  <Right> <Nop>
 " vnoremap <C-n> :nohl<CR>
 " inoremap <C-n> :
 
-" Settings for jedi-vim
-" let g:jedi#usages_command = "<leader>z"
-" let g:jedi#popup_on_dot = 0
-" let g:jedi#popup_select_first = 0
-" map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+" map leader to ctrl + a
+nnoremap <C-a> <C-w>
 
-set completeopt=longest,menuone
-function! OmniPopup(action)
-	if pumvisible()
-		if a:action == 'j'
-			return "\<C-N>"
-		elseif a:action == 'k'
-			return "\<C-P>"
-		endif
-	endif
-	return a:action
-endfunction
+" remap leader to space
+nnoremap <SPACE> <Nop>
+let mapleader=" "
 
 " For python
 set encoding=utf-8
@@ -125,8 +118,6 @@ set encoding=utf-8
 let maplocalleader = ","
 
 " For NERDTree
-" map leader to ctrl + a
-nnoremap <C-a> <C-w>
 
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
@@ -163,3 +154,10 @@ let g:airline_powerline_fonts = 1
 
 " For FZF
 set rtp+=/usr/local/opt/fzf
+
+" For vim-tmux-runner
+let g:VtrStripLeadingWhitespace = 0
+let g:VtrClearEmptyLines = 0
+let g:VtrAppendNewline = 1
+
+let g:VtrUseVtrMaps = 1
