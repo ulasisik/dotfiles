@@ -33,6 +33,14 @@ Plugin 'christoomey/vim-tmux-runner'
 " vim tmux navigator
 Plugin 'christoomey/vim-tmux-navigator'
 
+" automatic closing of quotes, parenthesis...
+Plugin 'Raimondi/delimitMate'
+
+" python autocompletion
+Plugin 'davidhalter/jedi-vim'
+
+" python folding
+Plugin 'tmhedberg/SimpylFold'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
