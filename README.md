@@ -7,7 +7,7 @@ This repository contains dotfiles required to configure terminal on macOS.
 - iTerm2
 - Oh My Zsh
 - Powerlevel10k
-- Vim packages: airline (status bar), todo.txt (fancy todo lists), NERDTree (filesystem tree), VTR (vim tmux runner), VTN (vim tmux navigator)
+- Vim packages: airline (status bar), todo.txt (fancy todo lists), NERDTree (filesystem tree), VTR (vim tmux runner), VTN (vim tmux navigator), delimitMate (automaic closing of quotes and paranthesis), jedi-vim (python autocompletion), SimplyFold (python folding)
 - FZF (fuzzy finder)
 
 ## Install iTerm2
