@@ -12,7 +12,10 @@ This repository contains dotfiles required to configure terminal on macOS.
 
 ## Install iTerm2
 ```
-brew cask install iterm2
+# install brew first
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+brew install --cask iterm2
 ```
 
 ## Install Oh My Zsh
